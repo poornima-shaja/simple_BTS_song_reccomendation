@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ARMYNetwork - Your BTS Social Hub</title>
+    <!-- Add your CSS stylesheets and other meta tags here -->
+</head>
+
+<style>
+    /* Style the h1 header */
+    h1 {
+        color: #007bff; /* Blue color */
+    }
+
+    /* Style the h2 headers for sections */
+    h2 {
+        color: #333; /* Dark gray color */
+    }
+
+    /* Style the unordered lists */
+    ul {
+        list-style-type: none; /* Remove bullet points */
+        padding: 0; /* Remove default padding */
+    }
+
+    /* Style list items within the unordered lists */
+    li {
+        margin-bottom: 10px; /* Add some spacing between list items */
+    }
+</style>
+<body>
+    <h1>Hello, ARMY!</h1>
+
+    <h2>You Mostly listen to 
+        {% for genre in matched_genre %}
+            {{ genre }},
+        {% endfor %} types of Genres from BTS:</h2>
+
+    <h2>You're Most Favourite Genres of BTS:</h2>
+    <ul>
+        {% for genre in repeated_genres %}
+            <li>{{ genre }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Reccomended Songs for You:</h2>
+    <ul>
+        {% for song in matched_song %}
+            <li>{{ song }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

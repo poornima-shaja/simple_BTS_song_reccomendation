@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ARMYNetwork - Your BTS Social Hub</title>
+    <!-- Add your CSS stylesheets and other meta tags here -->
+</head>
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Style the h1 header */
+h1 {
+    color: #007bff; /* Blue color */
+}
+
+/* Style the form container */
+form {
+    max-width: 400px; /* Set a maximum width for the form */
+    
+}
+
+/* Style the checkboxes and labels */
+label {
+    display: block; /* Display each label on a new line */
+    margin-bottom: 10px; /* Add some spacing between labels */
+}
+
+/* Style the submit button */
+button[type="submit"] {
+    background-color: #007bff; /* Blue background color */
+    color: white; /* White text color */
+    border: none; /* Remove borders */
+    padding: 10px 20px; /* Add some padding */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Style the form container */
+h2 {
+    color: #333; /* Dark gray color */
+}
+
+/* styles.css */
+
+/* Style the grid container */
+.option-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Create three equal-width columns */
+    gap: 10px; /* Add some spacing between items */
+}
+
+/* Style the labels within the grid */
+label {
+    display: block;
+    padding: 5px;
+    border: 1px solid #ccc; /* Add a border around each option */
+}
+
+</style>
+<h1>Hello, ARMY!</h1>
+    
+<h2>Select your favorite songs and get recommended songs</h2>
+
+<!-- Create a form for user input -->
+<form action='/analyze' method='POST'>
+    <!-- Create a grid container for the options -->
+    <div class="option-grid">
+        {% for song in songs %}
+        <label>
+            <input type="checkbox" name="user_songs[]" value="{{ song.song_name }}"> {{ song.song_name }}
+        </label>
+        {% endfor %}
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
